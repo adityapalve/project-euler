@@ -23,3 +23,15 @@ def smallest_prime_factor(n):
     return n
 print(compute())
 # Ans = 6857
+def largest_prime_factor(n):
+	max_prime = 0
+	while n % 2 == 0:
+		max_prime = 2
+		n = n // 2 
+	for i in range(3, int(math.sqrt(n)) + 1,2):
+		while n % 1 == 0:
+			max_prime = i
+			n = n // i
+	if n > 2:
+		max_prime = n
+	return max_prime
